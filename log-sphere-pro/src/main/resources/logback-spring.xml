@@ -2,12 +2,13 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml" />
     <appender name="LOGSTASH" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/application.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <fileNamePattern>./logs/spring-boot-logs-%d{yyyy-MM-dd}.log</fileNamePattern>
             <maxHistory>30</maxHistory>
         </rollingPolicy>
-        <encoder class="net.logstash.logback.encoder.LogstashEncoder" />
+        <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+            <includeMdc>true</includeMdc>
+        </encoder>
     </appender>
     <root level="INFO">
         <appender-ref ref="LOGSTASH" />
