@@ -1,6 +1,5 @@
 package com.mehmetberkan.logspherepro.util;
 
-import com.mehmetberkan.logspherepro.controller.ProductController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
